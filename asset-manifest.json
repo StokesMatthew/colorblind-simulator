@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/colorblind-simulator/static/css/main.07d0fd07.css",
+    "main.js": "/colorblind-simulator/static/js/main.bb348ed0.js",
+    "static/js/453.5f691cf9.chunk.js": "/colorblind-simulator/static/js/453.5f691cf9.chunk.js",
+    "index.html": "/colorblind-simulator/index.html",
+    "main.07d0fd07.css.map": "/colorblind-simulator/static/css/main.07d0fd07.css.map",
+    "main.bb348ed0.js.map": "/colorblind-simulator/static/js/main.bb348ed0.js.map",
+    "453.5f691cf9.chunk.js.map": "/colorblind-simulator/static/js/453.5f691cf9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07d0fd07.css",
+    "static/js/main.bb348ed0.js"
+  ]
+}

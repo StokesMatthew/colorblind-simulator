@@ -3,12 +3,6 @@ import './App.css';
 import { colorBlindMatrices } from './matrices';
 import { applyColorMatrix, rgbToCss, hsvToRgb } from './colorUtils';
 
-/**
- * Custom hook for debouncing values to improve performance
- * @param {any} value - The value to debounce
- * @param {number} delay - Delay in milliseconds
- * @returns {any} The debounced value
- */
 const useDebounce = (value, delay) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
   
@@ -25,16 +19,9 @@ const useDebounce = (value, delay) => {
   return debouncedValue;
 };
 
-/**
- * Main Color Blindness Simulator Component
- * 
- * This component provides a web-based tool for simulating various types of color vision deficiencies.
- * Users can upload images, select different color blindness types, adjust simulation strength,
- * and view real-time previews of how colors appear to users with different types of color blindness.
- */
 export default function App() {
   // State management for UI controls
-  const [mode, setMode] = useState('normal'); // Current color blindness simulation mode
+  const [mode, setMode] = useState('normal'); //Current color blindness simulation mode
   const [algorithm, setAlgorithm] = useState('machado'); // Selected algorithm for simulation
   const [strength, setStrength] = useState(0.5); // Simulation strength (0-1)
   const [uploadedImage, setUploadedImage] = useState(null); // URL of uploaded image
@@ -42,7 +29,7 @@ export default function App() {
   const [error, setError] = useState(null); // Error message for invalid uploads
 
   // Canvas refs for image processing
-  const imageCanvasRef = useRef(null); // Hidden canvas for original image
+  const imageCanvasRef = useRef(null); // Hidden canvas for orignal image
   const outputCanvasRef = useRef(null); // Canvas for displaying processed image
 
   // Debounce strength changes to improve performance during slider adjustments
@@ -104,7 +91,7 @@ export default function App() {
         data[i] = simRgb[0];     // Red
         data[i + 1] = simRgb[1]; // Green
         data[i + 2] = simRgb[2]; // Blue
-        // data[i + 3] is alpha (transparency) - leave unchanged
+        //data[i + 3] is alpha (transparency) - leave unchanged
       }
 
       // Display processed image
@@ -118,7 +105,7 @@ export default function App() {
     };
     
     img.onerror = () => {
-      // Handle image loading errors
+      // Handle image loadingerrors
       setLoading(false);
     };
   }, [uploadedImage, matrix, debouncedStrength]);

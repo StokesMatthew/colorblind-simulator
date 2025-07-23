@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# 🎨 Color Blindness Simulator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web-based tool that simulates various types of color vision deficiencies, helping designers and developers understand how their work appears to users with different types of color blindness.
 
-## Available Scripts
+## 🌟 Features
 
-In the project directory, you can run:
+- **Multiple Color Blindness Types**: Simulate 7 different types of color vision deficiencies
+  - **Normal Vision**: Baseline for comparison
+  - **Protanopia/Protanomaly**: Red-blind/Red-weak vision
+  - **Deuteranopia/Deuteranomaly**: Green-blind/Green-weak vision  
+  - **Tritanopia/Tritanomaly**: Blue-blind/Blue-weak vision
+  - **Achromatopsia**: Complete color blindness (monochrome)
 
-### `npm start`
+- **Multiple Algorithms**: Choose from different simulation algorithms
+  - **Brettel**: Classic color blindness simulation
+  - **Vienot**: Alternative algorithm for more accurate simulation
+  - **Machado**: Default algorithm with good balance of accuracy
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Adjustable Strength**: Control the intensity of the simulation (0-100%)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Image Upload**: Upload and process your own images to see how they appear to users with color blindness
 
-### `npm test`
+- **Color Grid Preview**: Interactive color grid showing how different hues and saturations appear under each simulation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (version 14 or higher)
+- npm or yarn
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd colorblind
+```
 
-### `npm run eject`
+2. Install dependencies:
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Start the development server:
+```bash
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📖 How to Use
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Basic Usage
 
-## Learn More
+1. **Select Color Blindness Type**: Click on the buttons to choose which type of color vision deficiency to simulate
+2. **Adjust Strength**: Use the slider to control how strong the simulation effect is
+3. **View Color Grid**: See how different colors appear under the selected simulation
+4. **Upload Images**: Click "Choose File" to upload and process your own images
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Advanced Features
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Algorithm Selection**: For certain color blindness types, you can choose between different simulation algorithms
+- **Image Processing**: Upload images to see how they would appear to users with color blindness
+- **Real-time Updates**: Changes to settings are applied immediately to both the color grid and uploaded images
 
-### Code Splitting
+## 🧪 Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
 
-### Analyzing the Bundle Size
+## 🛠️ Technical Details
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Color Transformation
 
-### Making a Progressive Web App
+The application uses color transformation matrices to simulate color blindness. Each type of color vision deficiency has specific transformation matrices that modify how colors are perceived:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Protanopia/Protanomaly**: Affects red cone sensitivity
+- **Deuteranopia/Deuteranomaly**: Affects green cone sensitivity  
+- **Tritanopia/Tritanomaly**: Affects blue cone sensitivity
+- **Achromatopsia**: Converts all colors to grayscale
 
-### Advanced Configuration
+### Color Space Conversion
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The simulation uses proper color space conversion:
+1. Convert sRGB to linear RGB
+2. Apply color transformation matrix
+3. Convert back to sRGB
+4. Blend with original color based on strength setting
 
-### Deployment
+## 🎯 Use Cases
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Web Design**: Test color schemes and UI elements for accessibility
+- **Graphic Design**: Ensure designs are accessible to users with color blindness
+- **Education**: Learn about different types of color vision deficiencies
+- **Development**: Test applications for color accessibility compliance
 
-### `npm run build` fails to minify
+## 📄 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- Color transformation matrices based on research by Brettel, Vienot, and Machado
+- Built with React and Create React App
